@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@css/DarkTheme.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client_v2.controller.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Авторы">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#addOrChangeAuthorAction" text="Добавить/Изменить" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Издательства">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#addOrChangePublisherAction" text="Добавить/Изменить" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Города">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#addOrChangeCityAction" text="Добавить/Изменить" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Жанры">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#addOrChangeGenreAction" text="Добавить/Изменить" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TableView fx:id="bookTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="columnNumber" prefWidth="75.0" text="Год" />
+          <TableColumn fx:id="columnTitle" prefWidth="139.0" text="Название" />
+            <TableColumn fx:id="columnAuthor" prefWidth="128.0" text="Автор" />
+            <TableColumn fx:id="columnGenre" prefWidth="126.0" text="Жанр" />
+            <TableColumn fx:id="columnPublisher" prefWidth="131.0" text="Издательство" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox prefHeight="39.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addBookAction" prefHeight="33.0" prefWidth="128.0" text="Добавить" translateX="5.0" translateY="3.0" />
+            <Button mnemonicParsing="false" onAction="#changeBookAction" prefHeight="33.0" prefWidth="145.0" text="Изменить" translateX="15.0" translateY="3.0" />
+            <Button mnemonicParsing="false" onAction="#deleteBookAction" prefHeight="28.0" prefWidth="145.0" text="Удалить " translateX="25.0" translateY="3.0" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
